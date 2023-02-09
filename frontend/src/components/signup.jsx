@@ -10,11 +10,11 @@ const Signup = () => {
         axios.post('/sign-up', {
             username: username,
             password: password
-        }).then(()=>{
-            setUsername('');
-            setPassword('');
         })
+        setUsername('');
+        setPassword('');
     };
+    
     return(
         <div>
             <h1>Sign Up</h1>
@@ -22,7 +22,7 @@ const Signup = () => {
                 <label for="username">Username</label>
                 <input name="username" placeholder="username" type="text" onChange={(e)=>setUsername(e.target.value)}/>
                 <label for="password">Password</label>
-                <input name="password" type="password" onChange={(e)=>setUsername(e.target.value)}/>
+                <input name="password" type="password" onChange={(e)=>setPassword(e.target.value)}/>
                 <button>Sign Up</button>
             </form>
         </div>
