@@ -1,20 +1,32 @@
 import axios from "axios";
-import { redirect } from "react-router-dom";
-import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-    let session = Cookies.get('session')
-    console.log(session);
+    const [data, setData] = useState();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get('/user')
+        .then((response) => {
+            if (!response.data) {
+                navigate('/')
+            } else {
+                setData(response.data)
+            }
+        })
+    }, [data])
 
     const handleLogout = () => {
-        axios.get('/logout').then(redirect('/login'))
+        axios.post('/logout').then((response) => setData(response.data));
     }
+
     return(
         <div>
-            Hello world!
-            <button>Logout</button>
+            Hello World!
+            <button onClick={handleLogout}>Logout</button>
         </div>
     );
 };
 
-export default Home
+export default Home;

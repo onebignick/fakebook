@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    width: 100%;
+    gap: 3px;
+}
+
+.wrapper-small {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+.hero-text {
+    font-size: 60px;
+    font-weight: 700;
+    color: #166FE5
+}
+
+.hero-desc {
+    font-size: 24px;
+}
