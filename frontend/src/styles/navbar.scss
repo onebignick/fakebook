@@ -1,0 +1,23 @@
+.navbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 80px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.button-group {
+    justify-content: space-around;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.button-group-long {
+    justify-content: space-around;
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+}
