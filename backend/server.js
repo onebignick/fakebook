@@ -41,7 +41,6 @@ app.post('/login', (request, response, next) => {
         else {
             request.logIn(user, error => {
                 if (error) throw error;
-                console.log(request.user);
                 response.send(request.user)
             })
         }

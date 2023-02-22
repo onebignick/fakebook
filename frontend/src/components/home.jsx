@@ -1,30 +1,22 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../App";
 
 const Home = () => {
-    const [data, setData] = useState();
+    const user = useContext(UserContext);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        axios.get('/user')
-        .then((response) => {
-            if (!response.data) {
-                navigate('/')
-            } else {
-                setData(response.data)
-            }
-        })
-    }, [data])
-
     const handleLogout = () => {
-        axios.post('/logout').then((response) => setData(response.data));
+        axios.post('/logout').then(() => user.getUser());
     }
 
     return(
         <div>
             Hello World!
             <button onClick={handleLogout}>Logout</button>
+            <button onClick={()=>navigate('/')}>Home</button>
+            <button onClick={()=>navigate('/profile')}>Profile</button>
         </div>
     );
 };

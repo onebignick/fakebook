@@ -1,20 +1,21 @@
 import '../styles/login.scss'
-import { useEffect, useState } from "react";
+import { UserContext } from '../App';
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 
 const Login = () => {
+    const user = useContext(UserContext);
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
-    const [data, setData] = useState();
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (data) {
+        if (user.user) {
             navigate('/home')
         }
-    }, [data])
+    }, [user.user, navigate])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -25,7 +26,7 @@ const Login = () => {
             if (!response.data) {
                 setError('Invalid username or password');
             } else {
-                setData(response.data)
+                user.getUser();
             }
         });
     }
