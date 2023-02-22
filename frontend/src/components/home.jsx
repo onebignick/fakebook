@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
 import Navbar from "./navbar";
+import Sidebar from "./sidebar";
 import '../styles/home.scss'
 
 const Home = () => {
@@ -17,10 +18,13 @@ const Home = () => {
         <div>
             <Navbar/>
             <div className="home-wrapper">
-            Hello World!
-            <button onClick={handleLogout}>Logout</button>
-            <button onClick={()=>navigate('/')}>Home</button>
-            <button onClick={()=>navigate('/profile')}>Profile</button>
+                <Sidebar/>
+                <div className="marker">
+                    s
+                </div>
+                <div className="marker">
+                    s
+                </div>
             </div>
         </div>
     );
