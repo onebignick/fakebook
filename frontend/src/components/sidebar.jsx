@@ -23,7 +23,7 @@ const Sidebar = () => {
                 <div className='sidebar-link'>
                     <span>Memories</span>
                 </div>
-                <div className='sidebar-link'>
+                <div className='sidebar-link seemore'>
                     <button>See More</button>
                 </div>               
             </div>
