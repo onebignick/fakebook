@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs');
 module.exports = function(passport) {
     passport.use(
         new localStrategy((username, password, done) => {
-            db.get('SELECT * FROM users WHERE username=$username', {$username: username}, (error, user) => {
+            db.get('SELECT * FROM users WHERE email=$username', {$username: username}, (error, user) => {
                 if (error) throw error
                 if (!user) return done(null, false);
                 bcrypt.compare(password, user.password, (error, result) => {

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 
 const Login = () => {
     const user = useContext(UserContext);
-    const [username, setUsername] = useState();
+    const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
     const navigate = useNavigate();
@@ -20,11 +20,11 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post('/login', {
-            username: username,
+            username: email,
             password: password,
         }).then(response => {
             if (!response.data) {
-                setError('Invalid username or password');
+                setError('Invalid email or password');
             } else {
                 user.getUser();
             }
@@ -39,7 +39,7 @@ const Login = () => {
                 </div>
             <div className="wrapper-small">
                 <form onSubmit={handleSubmit}>
-                    <input value={username || ''} placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+                    <input value={email || ''} placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
                     <input value={password || ''} placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
                     <span>{error}</span><br/>
                     <input type="submit" value="submit"/>

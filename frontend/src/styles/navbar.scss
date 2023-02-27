@@ -1,11 +1,13 @@
 .navbar-wrapper {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 80px;
+    width: calc(100vw - 30px);
+    height: 60px;
     align-items: center;
     position: fixed;
     top: 0;
+    padding: 0px 15px;
+    background-color: #ffffff;
 }
 
 .button-group {
@@ -13,6 +15,7 @@
     flex: 1;
     display: flex;
     flex-direction: row;
+    gap: 5px;
 }
 
 .button-group-long {
@@ -20,4 +23,22 @@
     flex: 2;
     display: flex;
     flex-direction: row;
+}
+
+.icon-round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E4E6EB;
+    width: 40px;
+    height: auto;
+    border-radius: 100px;
+}
+
+.right {
+    justify-content: right;
+}
+
+.left {
+    justify-content: left;
 }

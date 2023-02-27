@@ -7,10 +7,8 @@ const Navbar = () => {
 
     return(
         <div className="navbar-wrapper">
-            <div className="button-group">
-                <div className="icon">
-                    <i className="fa-brands fa-facebook"></i>
-                </div>
+            <div className="button-group left">
+                <i className="fa-brands fa-facebook"></i>
                 <div className="searchbar">
                     SearchBar
                 </div>
@@ -19,32 +17,16 @@ const Navbar = () => {
                 <div className="icon">
                     <i className="fa-solid fa-house"></i>
                 </div>
-                <div className="icon">
-                    <i className="fa-brands fa-youtube"></i>
-                </div>
-                <div className="icon">
-                    <i className="fa-solid fa-store"></i>
-                </div>
+                <i class="fa-solid fa-user-group"></i>
                 <div className="icon">
                     <i className="fa-solid fa-people-group"></i>
                 </div>
-                <div className="icon">
-                    <i className="fa-brands fa-facebook-messenger"></i>
-                </div>
             </div>
-            <div className="button-group">
-                <div className="icon-round">
-                    {user.user.username}
-                </div>
-                <div className="icon-round">
-                    <i className="fa-solid fa-plus"></i>
-                </div>
-                <div className="icon-round">
-                    <i className="fa-solid fa-bell"></i>
-                </div>
-                <div className="icon-round">
-                    <i className="fa-solid fa-caret-down"></i>
-                </div>
+            <div className="button-group right">
+                <i className="fa-solid fa-plus icon-round"></i>
+                <i className="fa-solid fa-bell icon-round"></i>
+                <i className="fa-brands fa-facebook-messenger icon-round"></i>
+                <img className="icon-round" src={user.user.profile_picture} alt=""/>
             </div>
         </div>
     );

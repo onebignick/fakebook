@@ -1,14 +1,18 @@
 .sidebar-wrapper {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 80px);
-    background-color: grey;
+    height: calc(100vh - 60px);
+    background-color: #E4E6EB;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .sidebar-group {
     display: flex;
     flex-direction: column;
     flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .sidebar-link{
@@ -17,8 +21,16 @@
     flex: 1 1 0;
     text-align: left;
     align-items: center;
+    gap: 3px;
+    min-height: 40px;
 }
 
 .seemore {
     justify-content: center;
+}
+
+.profile-picture {
+    max-width: 30px;
+    height: auto;
+    border-radius: 100px;
 }

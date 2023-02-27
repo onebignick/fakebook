@@ -19,10 +19,10 @@ const Home = () => {
             <Navbar/>
             <div className="home-wrapper">
                 <Sidebar/>
-                <div className="marker">
+                <div>
                     s
                 </div>
-                <div className="marker">
+                <div>
                     s
                 </div>
             </div>

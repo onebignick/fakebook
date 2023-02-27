@@ -8,7 +8,6 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const localStrategy = require("passport-local").Strategy;
 const sqlite3 = require('sqlite3');
-const { use } = require('passport');
 const db = new sqlite3.Database('database.db');
 
 const port = 5000;
@@ -16,6 +15,7 @@ const app = express();
 //--------------------------END OF IMPORTS----------------------------
 
 //--------------------------START OF MIDDLEWARE------------------------
+app.use(express.static('public'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors({
