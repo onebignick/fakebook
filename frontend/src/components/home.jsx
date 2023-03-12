@@ -1,29 +1,28 @@
-import axios from "axios";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { UserContext } from "../App";
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
+import UserPopup from "./userPopup";
 import '../styles/home.scss'
+import CreatePost from "./createPost";
+import CreateStory from "./createStory";
+import { useState } from "react";
 
 const Home = () => {
-    const user = useContext(UserContext);
-    const navigate = useNavigate();
+    const [userPopup, setUserPopup] = useState(false);
 
-    const handleLogout = () => {
-        axios.post('/logout').then(() => user.getUser());
+    const handleUserPopup = () => {
+        setUserPopup(!userPopup)
+        console.log(userPopup);
     }
 
     return(
         <div>
-            <Navbar/>
+            <Navbar userpopup={handleUserPopup}/>
+            {userPopup ? <UserPopup/> : ""}
             <div className="home-wrapper">
                 <Sidebar/>
-                <div>
-                    s
-                </div>
-                <div>
-                    s
+                <div className="home-feed">
+                    <CreateStory/>
+                    <CreatePost/>
                 </div>
             </div>
         </div>

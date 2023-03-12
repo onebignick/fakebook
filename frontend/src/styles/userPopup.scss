@@ -1,0 +1,12 @@
+.user-popup-window {
+    position: absolute;
+    background-color: white;
+    left: calc(100vw - 400px);
+    z-index: 5;
+    min-width: 360px;
+    max-width: 360px;
+    min-height: 400px;
+    max-height: 400px;
+    border-radius: 12px;
+    border: 2px solid #E4E6E0;
+}

@@ -2,7 +2,7 @@ import '../styles/navbar.scss';
 import { UserContext } from '../App';
 import { useContext } from 'react';
 
-const Navbar = () => {
+const Navbar = (props) => {
     const user = useContext(UserContext)
 
     return(
@@ -26,7 +26,7 @@ const Navbar = () => {
                 <i className="fa-solid fa-plus icon-round"></i>
                 <i className="fa-solid fa-bell icon-round"></i>
                 <i className="fa-brands fa-facebook-messenger icon-round"></i>
-                <img className="icon-round" src={user.user.profile_picture} alt=""/>
+                <img className="icon-round" src={user.user.profile_picture} alt="" onClick={props.userpopup}/>
             </div>
         </div>
     );

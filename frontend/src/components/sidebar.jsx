@@ -102,15 +102,15 @@ const Sidebar = () => {
                     <span>{user.user.firstname} {user.user.lastname}</span>
                 </div>
                 <div className='sidebar-link'>
-                    <i class="fa-solid fa-user-group"></i>
+                    <i className="fa-solid fa-user-group"></i>
                     <span>Watch</span>
                 </div> 
                 <div className='sidebar-link'>
-                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <i className="fa-solid fa-clock-rotate-left"></i>
                     <span>Most Recent</span>
                 </div>
                 <div className='sidebar-link'>
-                    <i className="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-facebook"></i>
                     <span>Welcome</span>
                 </div>                 
                 <div className='sidebar-link'>

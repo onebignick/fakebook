@@ -1,0 +1,118 @@
+.create-story-wrapper {
+    background-color: white;
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+.create-story-flexbox {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.create-story-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E4E6EB;
+}
+
+.create-story-story {
+    padding-top: 15px;
+    display: flex;
+    gap: 50px;
+    min-width: 0;
+    min-height: 0;
+}
+
+.other-story {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+}
+
+.other-story::-webkit-scrollbar{
+    display:none;
+}
+
+.create-story-story-button {
+    min-height: 200px;
+    max-height: 200px;
+    min-width: 112.5px;
+    max-width: 112.5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    position: relative;
+    border: 1px solid #E4E6E0;
+
+    .create-story-picture {
+        filter: brightness(90%);
+        display: flex;
+        justify-content: center;
+        border-radius: 12px;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+
+        img {
+            right: 20px;
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    .create-story-plus-button{
+        position: absolute;
+        left: 35px;
+        top: 130px;
+        display: flex;
+        justify-content: center;
+        background-color: #FFFFFF;
+        min-height: 40px;
+        max-height: 40px;
+        min-width: 40px;
+        max-width: 40px;
+        border-radius: 100px;
+        align-items: center;
+        z-index: 3;
+
+        .create-story-plus {
+            display: flex;
+            justify-content: center;
+            background-color: #166FE5;
+            min-height: 33px;
+            min-width: 33px;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 100px;
+            color: #FFFFFF;
+            align-items: center;
+        }
+    }
+
+    .create-story-button-description {
+        position: absolute;
+        display: flex;
+        background-color: #FFFFFF;
+        min-height: 30px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        top: 150px;
+        padding-top: 20px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+}
+
+.create-story-story-flexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .create-story-story-description {
+        height: 30px;
+        width: 100%;
+    }
+}

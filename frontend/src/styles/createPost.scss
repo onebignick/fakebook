@@ -1,0 +1,48 @@
+.post-wrapper {
+    background-color: white;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.post-flexbox {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.post-box {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E4E6EB;
+}
+
+.post-button {
+    width: 100%;
+    background-color: #E4E6EB;
+    border-radius: 24px;
+    border-style: none;
+    align-items: center;
+
+    :hover {
+        background-color: rgba(0,0,0,0.05);
+        border-radius: 24px;
+        opacity: 1;
+        transition: opacity 2s linear;
+    }
+}
+
+.post-text {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.button-box {
+    padding-top: 15px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
