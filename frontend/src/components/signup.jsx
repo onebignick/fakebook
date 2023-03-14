@@ -9,6 +9,8 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
 
   useEffect(() => {
     if (user.user) {
@@ -21,6 +23,8 @@ const Signup = () => {
       axios.post('/signup', {
           username: username,
           password: password,
+          firstname: firstname,
+          lastname: lastname,
       }).then(response => {
         if (response.data === "Success") {
           navigate('/');
@@ -34,7 +38,9 @@ const Signup = () => {
       <div>
         <form onSubmit={handleSubmit}>
           <h1>Signup</h1>
-          <input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+          <input placeholder="First Name" onChange={(e) => setFirstname(e.target.value)}/>
+          <input placeholder="Last Name" onChange={(e) => setLastname(e.target.value)}/>
+          <input placeholder="email" onChange={(e) => setUsername(e.target.value)}/>
           <input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
           {error ? <span>{error}</span> : null}
           <input type="submit" value="submit"/>

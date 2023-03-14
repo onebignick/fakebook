@@ -55,20 +55,25 @@ app.post('/logout', (request, response, next) => {
 });
 
 app.post('/signup', (request, response) => {
-    db.get('SELECT * FROM users WHERE username=$username', {
+    db.get('SELECT * FROM users WHERE email=$username', {
         $username: request.body.username
     }, async (error, user) => {
         if (error) throw error
         else if (user) response.send('User already exists')
         else if (!user) {
             const hashedPassword = await bcrypt.hash(request.body.password, 10);
-            db.run('INSERT INTO users (username, password) VALUES ($username, $password)', {
-                $username: request.body.username,
-                $password: hashedPassword
+            db.run('INSERT INTO users(firstname, lastname, email, password, dob, gender, profile_picture) VALUES ($firstname, $lastname, $email, $password, $dob, $gender, $profile_picture)', {
+                $firstname: request.body.firstname,
+                $lastname: request.body.lastname,
+                $email: request.body.username,
+                $password: hashedPassword,
+                $dob: '2000-01-01',
+                $gender: 'male',
+                $profile_picture: 'http://localhost:3000/images/default_picture.jpg'
             }, (error) => {
-                if (error) throw error
+                if (error) throw error;
                 response.send('Success');
-            })
+            });
         }
     })
 });

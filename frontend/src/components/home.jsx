@@ -17,7 +17,7 @@ const Home = () => {
     return(
         <div>
             <Navbar userpopup={handleUserPopup}/>
-            {userPopup ? <UserPopup/> : ""}
+            {userPopup ? <UserPopup userpopup={handleUserPopup}/> : ""}
             <div className="home-wrapper">
                 <Sidebar/>
                 <div className="home-feed">

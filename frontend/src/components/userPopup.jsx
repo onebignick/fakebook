@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { UserContext } from '../App';
 import '../styles/userPopup.scss'
 
-const UserPopup = () => {
+const UserPopup = (props) => {
     const user = useContext(UserContext);
 
     const handleLogout = () => {
@@ -13,12 +13,13 @@ const UserPopup = () => {
     }
 
     return(
-        <div className="user-popup-window">
-            <div>
-                Hello World!
-            </div>
-            <div className='logout' onClick={handleLogout}>
-                Log Out
+        <div className="user-popup-overlay" onClick={props.userpopup}>
+            <div className="user-popup-window" onClick={(e)=>{
+                e.stopPropagation();
+            }}>
+                <div className='user-popup-link' onClick={handleLogout}>
+                    Log Out
+                </div>
             </div>
         </div>
     );
