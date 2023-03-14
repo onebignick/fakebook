@@ -17,6 +17,19 @@ const Login = () => {
         }
     }, [user.user, navigate])
 
+    const autoLogin = () => {
+        axios.post('/login', {
+            username: 'admin@test.com',
+            password: 'root',
+        }).then(response => {
+            if (!response.data) {
+                setError('Invalid email or password');
+            } else {
+                user.getUser();
+            }
+        });
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post('/login', {
@@ -43,6 +56,7 @@ const Login = () => {
                     <input value={password || ''} placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
                     <span>{error}</span><br/>
                     <input type="submit" value="submit"/>
+                    <input type="button" value="Auto Login" onClick={autoLogin}/>
                 </form>
                 <span>Don't have an account? <a href='./signup'>Sign up</a></span>
             </div>
